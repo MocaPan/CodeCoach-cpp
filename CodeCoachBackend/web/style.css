@@ -1,0 +1,173 @@
+/* ----- RESET ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----- BODY GENERAL ----- */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #f3e8ff, #faf5ff);
+    color: #333;
+    padding: 25px;
+}
+
+/* ----- HEADER ----- */
+header {
+    margin-bottom: 20px;
+}
+
+.header-main {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo-app {
+    font-size: 48px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.sub {
+    color: #5a5a5a;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+/* ----- CONTENEDOR PRINCIPAL ----- */
+.container {
+    display: flex;
+    gap: 25px;
+}
+
+/* ----- PANELES ----- */
+.panel {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: 0.2s;
+}
+
+.panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+.left, .right {
+    flex: 1;
+}
+
+/* ----- BOTONES PRINCIPALES ----- */
+button.primary {
+    background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(157, 78, 221, 0.35);
+    transition: 0.25s ease;
+}
+
+button.primary:hover {
+    background: linear-gradient(135deg, #6b22a8, #892ed4);
+    transform: scale(1.04);
+}
+
+/* ----- TARJETA DE PROBLEMA ----- */
+.problema {
+    padding: 15px;
+    background: #fdfaff;
+    border-radius: 12px;
+    border: 1px solid #e7d8ff;
+    margin-top: 12px;
+    transition: 0.2s;
+}
+
+.problema:hover {
+    border-color: #a45deb;
+    box-shadow: 0 2px 12px rgba(164, 93, 235, 0.18);
+    transform: translateX(4px);
+}
+
+.problema h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
+    color: #3a0066;
+}
+
+.problema button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #9d4edd, #c77dff);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.problema button:hover {
+    background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+    transform: scale(1.05);
+}
+
+/* ----- CAJA DE DESCRIPCIÓN ----- */
+.descripcion {
+    background: #111;
+    color: #b589ff;
+    padding: 15px;
+    border-radius: 10px;
+    height: 220px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    border: 1px solid #2b2b2b;
+    font-family: Consolas, monospace;
+}
+
+/* ----- CAJA DE SALIDA ----- */
+.salida {
+    background: #000;
+    color: #9458f6;
+    padding: 15px;
+    border-radius: 10px;
+    height: 220px;
+    overflow-y: auto;
+    font-family: Consolas, monospace;
+}
+
+/* ----- TEXTAREA EDITOR ----- */
+textarea {
+    width: 100%;
+    font-family: Consolas, monospace;
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #dabdff;
+    background: white;
+    resize: vertical;
+    min-height: 200px;
+    transition: 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #9d4edd;
+    box-shadow: 0 0 8px rgba(157, 78, 221, 0.35);
+}
