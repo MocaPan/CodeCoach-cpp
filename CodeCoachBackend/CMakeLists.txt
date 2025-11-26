@@ -26,6 +26,11 @@ set(HEADER_LIB_DIR "${CMAKE_SOURCE_DIR}/lib")
 set(OPENSSL_ROOT_DIR "Y:/OpenSSL/OpenSSL-Win64")
 find_package(OpenSSL REQUIRED)
 
+# --- MongoDB C++ Driver ---
+# Buscar la instalación de mongocxx
+find_package(mongocxx REQUIRED)
+find_package(bsoncxx REQUIRED)
+
 # ===================================================================
 # == DEFINICIÓN DE TARGETS (EJECUTABLES)
 # ===================================================================
@@ -64,3 +69,40 @@ target_link_libraries(
         OpenSSL::SSL      # Requerido para llamadas HTTPS
         OpenSSL::Crypto   # Requerido para llamadas HTTPS
 )
+
+# --- Target 3: Gestor de Problemas ---
+# Este servicio gestiona la base de datos de problemas.
+add_executable(
+    gestor_problemas
+    "gestor_problemas/gestor.cpp"
+)
+
+# Enlaza las librerías necesarias para el gestor.
+target_include_directories(
+    gestor_problemas
+    PUBLIC
+        ${HEADER_LIB_DIR}                    # Para httplib.h y json.hpp
+        "${CMAKE_SOURCE_DIR}/gestor_problemas" # Para database.h y models.h
+)
+
+target_link_libraries(
+    gestor_problemas
+    PRIVATE
+        mongo::mongocxx_shared  # MongoDB C++ driver
+        mongo::bsoncxx_shared   # BSON library
+)
+
+# --- Target 4: Cargador de Problemas (Utilidad) ---
+# Programa utilitario para cargar problemas de ejemplo.
+add_executable(
+    load_sample_problems
+    "utils/load_sample_problems.cpp"
+)
+
+# Enlaza las librerías necesarias para el cargador.
+target_include_directories(
+    load_sample_problems
+    PUBLIC
+        ${HEADER_LIB_DIR} # Para httplib.h y json.hpp
+)
+
