@@ -107,22 +107,13 @@ document.getElementById("btnEjecutar").addEventListener("click", async () => {
         //ANALIZAR SOLUCIÓN CON TU IA
         let analisis;
         try {
-            const respAI = await fetch("http://localhost:8081/analyze", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    code: codigo,
-                    results:
-                        "Input:\n" + data.input +
-                        "\nSalida usuario:\n" + salidaUsuario +
-                        "\nSalida esperada:\n" + data.salida_esperada
-                })
-            });
-
-            analisis = await respAI.json();
+            // El servidor C++ principal almacena la respuesta del LLM (que es un JSON-string)
+            // en data.coach_ai. Aquí lo parseamos.
+            analisis = JSON.parse(data.coach_ai);
         } catch (error) {
+            // Si el JSON en data.coach_ai no es válido, se usa un objeto de error por defecto
             analisis = {
-                feedback: "No se pudo obtener análisis del coach.",
+                feedback: data.coach_ai || "No se pudo obtener análisis del coach. Error de parsing.",
                 analysis_algorithm: "N/A",
                 analysis_complexity_time: "N/A",
                 analysis_complexity_space: "N/A"
