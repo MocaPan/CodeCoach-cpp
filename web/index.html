@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CodeCoach</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="header-main">
+    <h1 class="titulo-app">CodeCoach</h1>
+    <p class="sub">Plataforma interactiva para practicar algoritmos</p>
+</header>
+
+<main class="container">
+
+    <section class="left">
+        <div class="panel">
+            <button id="btnCargar" class="primary">Cargar lista de problemas</button>
+            <div id="problemas" class="lista"></div>
+        </div>
+    </section>
+
+    <section class="right">
+        <div class="panel">
+            <h2 id="tituloProblema">Selecciona un problema</h2>
+            <div id="metaProblema" class="meta"></div>
+
+            <pre id="descripcion" class="descripcion">Aquí aparecerá la descripción y los ejemplos.</pre>
+
+            <h3>Editor</h3>
+            <textarea id="codigo" spellcheck="false" placeholder="Escribe tu solución aquí..." rows="12"></textarea>
+
+            <div class="actions">
+                <button id="btnEjecutar" class="primary">Ejecutar código</button>
+
+                <select id="presetCodigo">
+                    <option value="">— Código de prueba —</option>
+                    <option value="// Hola mundo\n#include <iostream>\nint main(){ std::cout<<\"Hola\"; }">Hola Mundo</option>
+                    <option value="#include <iostream>\nint main(){ std::cout << 6; }">Ejemplo: salida 6</option>
+                </select>
+            </div>
+
+            <h3>Resultados</h3>
+            <pre id="salida" class="salida">Aquí aparecerán los resultados.</pre>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <small>CodeCoach — Proyecto académico</small>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

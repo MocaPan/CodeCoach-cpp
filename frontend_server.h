@@ -1,0 +1,13 @@
+//
+// Created by lizan on 6/11/2025.
+//
+
+#ifndef CODECOACHBACKEND_FRONTEND_SERVER_H
+#define CODECOACHBACKEND_FRONTEND_SERVER_H
+
+
+class frontend_server {
+};
+
+
+#endif //CODECOACHBACKEND_FRONTEND_SERVER_H
